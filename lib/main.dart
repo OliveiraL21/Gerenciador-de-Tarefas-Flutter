@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gerenciador_tarefas_dias/widgets/Clientes/Cadastro/cliente_cadastro.dart';
 import 'package:gerenciador_tarefas_dias/widgets/side_meu.dart';
 
 void main() {
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Gerenciador de Tarefas',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -44,34 +45,23 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      body: Row(
-        children: [
-          MenuLateral(),
-          Expanded(
-            child: Container(
+      body: Container(
+        color: Colors.white70,
+        child: Row(
+          children: [
+            MenuLateral(),
+            Expanded(
               child: Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container( alignment: Alignment.topLeft, width: 300, child: Text('Center')),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: Container(
-                        width: 300,
-                        child: TextFormField(
-                            decoration: InputDecoration(
-                                border: OutlineInputBorder(),
-                                hintText: 'Teste de Flutter',
-                                fillColor: Colors.white10,
-                                filled: true)),
-                      ),
-                    )
+                  children: const [
+                     ClienteCadastro(),
                   ],
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
     );
